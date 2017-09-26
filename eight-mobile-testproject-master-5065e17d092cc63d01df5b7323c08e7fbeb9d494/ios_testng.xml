@@ -1,0 +1,39 @@
+<suite name="fengjr-android-test" parallel="tests" thread-count="1">
+	<parameter name="selenium-url" value="http://10.255.2.78:4724/wd/hub" />
+	<!-- <parameter name="app-url" value="http://10.255.0.166/job/android-client-release/ws/mobile/channel-fengjr/mobile-channel-fengjr-release.apk"/> -->
+	<!-- <parameter name="app-url" value="/Users/houshuo/jenkins/job/workspace/ios-client/build/Release-iphoneos/fenghuangjinrong.app" 
+		/> -->
+	<parameter name="app-url"
+		value="/Users/houshuo/Documents/AndroidProjcets/android/app/build/outputs/apk/app-debug.apk" />
+	<parameter name="browser-name" value="" />
+	<parameter name="app-package" value="com.zhubajie.client" />
+	<parameter name="app-activity" value="" />
+	<parameter name="login-mobile-number" value="13011241230" />
+	<parameter name="login-password" value="123456" />
+	<test name="iPhone 6">
+		<parameter name="device-name" value="iPhone 6" />
+		<parameter name="platform-name" value="ios" />
+		<parameter name="platform-version" value="8.1" />
+		<classes>
+			<!-- testRegister parameters -->
+			<parameter name="unregist-login-name" value="zhanghf" />
+			<parameter name="unregist-mobile-number" value="130011241230" />
+			<parameter name="unregist-password" value="environment" />
+			<!-- testLogin parameters -->
+			<parameter name="mobile-number" value="13011241230" />
+			<parameter name="password" value="environment" />
+			<!-- testLockedAccoutLogin parameters -->
+			<parameter name="locked-mobile-number" value="13011241230" />
+			<parameter name="locked-password" value="environment" />
+			<!-- testSwitchAccount -->
+			<parameter name="mobile-number-switched" value="15210146579" />
+			<parameter name="password-switched" value="qpalzm" />
+
+			<!-- release -->
+			<class name="com.fengjr.mobile.test.TestCaseBase" />
+			<class name="com.fengjr.mobile.test.TestLogin" />
+			<class name="com.fengjr.mobile.test.TestSuggestionSumbit" />
+
+		</classes>
+	</test>
+</suite>

@@ -1,0 +1,39 @@
+<suite name="eight-android-test" parallel="tests" thread-count="1">
+	<parameter name="selenium-url" value="http://172.31.31.245:4723/wd/hub" />
+	<parameter name="app-url" value="" />
+	<parameter name="app-package" value="com.zhubajie.client" />
+	<parameter name="app-activity"
+		value="com.zhubajie.bundle_basic.home.LauncherActivity" />
+	<parameter name="login-mobile-number" value="13011241230" />
+	<parameter name="login-password" value="environment" />
+	<parameter name="browser-name" value="1" />
+	<test name="HUAWEI">
+		<parameter name="device-name" value="Nexus5" />
+		<parameter name="platform-name" value="ANDROID" />
+		<parameter name="platform-version" value="6.0" />
+		<classes>
+			<!-- testRegister parameters -->
+			<parameter name="unregist-login-name" value="zhanghf" />
+			<parameter name="unregist-mobile-number" value="130011241230" />
+			<parameter name="unregist-password" value="environment" />
+			<!-- testLogin parameters -->
+			<parameter name="mobile-number" value="13011241230" />
+			<parameter name="password" value="environment" />
+			<!-- testLockedAccoutLogin parameters -->
+			<parameter name="locked-mobile-number" value="13011241230" />
+			<parameter name="locked-password" value="environment" />
+			<!-- testSwitchAccount -->
+			<parameter name="mobile-number-switched" value="15210146579" />
+			<parameter name="password-switched" value="qpalzm" />
+
+			<!-- release -->
+			<class name="com.eight.mobile.test.TestCaseBase" />
+			<class name="com.eight.mobile.test.TestSetting"/>
+			<class name="com.eight.mobile.test.TestLogin"/>
+			<class name="com.eight.mobile.test.TestSearch" />
+			<class name="com.eight.mobile.test.TestContactServiceProvider"/>
+			<class name="com.eight.mobile.test.TestSendNeed"/>
+			<class name="com.eight.mobile.test.TestShopDetail"/>
+	</classes>
+	</test>
+</suite>
